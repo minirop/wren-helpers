@@ -7,13 +7,8 @@ class Set {
 		_data = []
 	}
 	
-	contains(item) {
-		return _data.contains(item)
-	}
-	
-	count {
-		return _data.count
-	}
+	contains(item) { _data.contains(item) }
+	count { _data.count }
 	
 	insert(item) {
 		var index = 0
@@ -30,4 +25,7 @@ class Set {
 		}
 		_data.add(item)
 	}
+	
+	iterate(iterator) { _data.iterate(iterator) }
+	iteratorValue(iterator) { _data.iteratorValue(iterator) }
 }
