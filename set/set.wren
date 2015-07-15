@@ -11,8 +11,7 @@ class Set {
 	count { _data.count }
 	
 	insert(item) {
-		var index = 0
-		while (index < count) {
+		for (index  in 0...count) {
 			if (item < _data[index]) {
 				_data.insert(index, item)
 				return
@@ -21,11 +20,20 @@ class Set {
 					return
 				}
 			}
-			index = index + 1
 		}
 		_data.add(item)
 	}
 	
 	iterate(iterator) { _data.iterate(iterator) }
 	iteratorValue(iterator) { _data.iteratorValue(iterator) }
+	
+	remove(item) {
+		for (index  in 0...count) {
+			if (item == _data[index]) {
+				_data.removeAt(index)
+				return true
+			}
+		}
+		return false
+	}
 }

@@ -7,11 +7,13 @@ s.insert(6)
 IO.print(s.count, " elements") // prints "3 elements"
 s.insert(3)
 IO.print(s.count, " elements") // still prints "3 elements"
+s.remove(6)
+IO.print(s.count, " elements") // prints "2 elements"
 
 IO.print(s.contains(3), " ", s.contains(4)) // prints "true false"
 
 for (i in s) {
-	IO.print(i) // prints 1, 3, 6
+	IO.print(i) // prints 1 then 3
 }
 
 class User {
