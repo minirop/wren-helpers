@@ -4,31 +4,11 @@ var list = [52, 11, 73, 12, 535, 23, 63, 88, 57, 12]
 
 IO.print("tested list: ", list)
 
-IO.print("all_of < 80: ", Algorithm.all_of(list) {|item|
-	return item < 80
-})
-IO.print("all_of > 10: ", Algorithm.all_of(list) {|item|
-	return item > 10
-})
-
-IO.print("any_of < 80: ", Algorithm.any_of(list) {|item|
-	return item < 80
-})
-IO.print("any_of < 10: ", Algorithm.any_of(list) {|item|
-	return item < 10
-})
-
 IO.print("none_of < 80: ", Algorithm.none_of(list) {|item|
 	return item < 80
 })
 IO.print("none_of < 10: ", Algorithm.none_of(list) {|item|
 	return item < 10
-})
-
-IO.print("count 12: ", Algorithm.count(list, 12))
-
-IO.print("count_if < 20: ", Algorithm.count_if(list) {|item|
-	return item < 20
 })
 
 IO.print("equals to itself? ", Algorithm.equal(list, list))

@@ -1,49 +1,9 @@
 class Algorithm {
-	static all_of(list, predicate) {
-		for (i in list) {
-			if (predicate.call(i) == false) {
-				return false
-			}
-		}
-		return true
-	}
-	
-	static any_of(list, predicate) {
-		for (i in list) {
-			if (predicate.call(i) == true) {
-				return true
-			}
-		}
-		return false
-	}
-	
 	static none_of(list, predicate) {
-		for (i in list) {
-			if (predicate.call(i) == true) {
-				return false
-			}
+		if (list.any(predicate)) {
+			return false
 		}
 		return true
-	}
-	
-	static count(list, value) {
-		var counter = 0
-		for (i in list) {
-			if (i == value) {
-				counter = counter + 1
-			}
-		}
-		return counter
-	}
-	
-	static count_if(list, predicate) {
-		var counter = 0
-		for (i in list) {
-			if (predicate.call(i) == true) {
-				counter = counter + 1
-			}
-		}
-		return counter
 	}
 	
 	static equal(list1, list2) {
