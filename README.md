@@ -5,7 +5,7 @@ Classes available in other languages written in wren
 * Set
 * Stack
 
-Algorithms available in class *Algorithms*
+Algorithms available in class *Algorithm*
 
 * none_of(list, predicate): return `true` if `predicate` returns `true` for no elements of `list`.
 * equal(list1, list2): return `true` if `list1` and `list2` have the same elements in the same order.
