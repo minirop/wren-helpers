@@ -2,6 +2,13 @@ class Set {
 	new {
 		_data = []
 	}
+
+	new(items) {
+		_data = []
+		for (item in items) {
+			insert(item)
+		}
+	}
 	
 	clear() {
 		_data = []
@@ -11,7 +18,7 @@ class Set {
 	count { _data.count }
 	
 	insert(item) {
-		for (index  in 0...count) {
+		for (index in 0...count) {
 			if (item < _data[index]) {
 				_data.insert(index, item)
 				return
@@ -28,7 +35,7 @@ class Set {
 	iteratorValue(iterator) { _data.iteratorValue(iterator) }
 	
 	remove(item) {
-		for (index  in 0...count) {
+		for (index in 0...count) {
 			if (item == _data[index]) {
 				_data.removeAt(index)
 				return true
@@ -36,4 +43,67 @@ class Set {
 		}
 		return false
 	}
+
+	|(other) {
+		var newSet = new Set
+		for (item in _data) {
+			newSet.insert(item)
+		}
+		for (item in other) {
+			newSet.insert(item)
+		}
+		return newSet
+	}
+
+	&(other) {
+		var newSet = new Set
+		for (item in other) {
+			if (_data.contains(item)) {
+				newSet.insert(item)
+			}
+		}
+		return newSet
+	}
+
+	+(other) { this | other }
+
+	-(other) {
+		var newSet = new Set(_data)
+		for (item in other) {
+			if (_data.contains(item)) {
+				newSet.remove(item)
+			}
+		}
+		return newSet
+	}
+
+	^(other) {
+		return (this | other) - (this & other)
+	}
+
+	*(other) {
+		var cartesianProduct = []
+		for (first in _data) {
+			for (second in other) {
+				cartesianProduct.add([first, second])
+			}
+		}
+		return cartesianProduct
+	}
+
+	==(other) {
+		if (count != other.count) return false
+
+		for (i in 0...count) {
+			if (!other.contains(_data[i])) return false
+		}
+
+		return true
+	}
+
+	isEmpty { count == 0 }
+
+	! { isEmpty }
+
+	toString { _data.toString }
 }
