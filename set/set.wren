@@ -16,6 +16,9 @@ class Set {
 	
 	contains(item) { _data.contains(item) }
 	count { _data.count }
+	isEmpty { count == 0 }
+	! { isEmpty }
+	toString { _data.toString }
 	
 	insert(item) {
 		for (index in 0...count) {
@@ -100,10 +103,4 @@ class Set {
 
 		return true
 	}
-
-	isEmpty { count == 0 }
-
-	! { isEmpty }
-
-	toString { _data.toString }
 }
