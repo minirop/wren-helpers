@@ -1,6 +1,6 @@
 import "stack" for Stack
 
-var s = new Stack
+var s = Stack.new()
 s.push(42)
 s.push(33)
 s.push(12)

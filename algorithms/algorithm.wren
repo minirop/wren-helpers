@@ -1,9 +1,6 @@
 class Algorithm {
 	static none_of(list, predicate) {
-		if (list.any(predicate)) {
-			return false
-		}
-		return true
+		return !list.any(predicate)
 	}
 	
 	static equal(list1, list2) {

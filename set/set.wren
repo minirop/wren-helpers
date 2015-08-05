@@ -1,9 +1,9 @@
 class Set {
-	new {
+	construct new() {
 		_data = []
 	}
 
-	new(items) {
+	construct new(items) {
 		_data = []
 		for (item in items) {
 			insert(item)
@@ -48,7 +48,7 @@ class Set {
 	}
 
 	|(other) {
-		var newSet = new Set
+		var newSet = Set.new()
 		for (item in _data) {
 			newSet.insert(item)
 		}
@@ -59,7 +59,7 @@ class Set {
 	}
 
 	&(other) {
-		var newSet = new Set
+		var newSet = Set.new()
 		for (item in other) {
 			if (_data.contains(item)) {
 				newSet.insert(item)
@@ -71,7 +71,7 @@ class Set {
 	+(other) { this | other }
 
 	-(other) {
-		var newSet = new Set(_data)
+		var newSet = Set.new(_data)
 		for (item in other) {
 			if (_data.contains(item)) {
 				newSet.remove(item)

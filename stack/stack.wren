@@ -1,5 +1,5 @@
 class Stack {
-	new {
+	construct new() {
 		_data = []
 	}
 	

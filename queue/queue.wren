@@ -1,5 +1,5 @@
 class Queue {
-	new {
+	construct new() {
 		_data = []
 	}
 	

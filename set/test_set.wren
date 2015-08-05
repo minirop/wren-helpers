@@ -1,6 +1,6 @@
 import "set" for Set
 
-var s = new Set
+var s = Set.new()
 s.insert(1)
 s.insert(3)
 s.insert(6)
@@ -17,7 +17,7 @@ for (i in s) {
 }
 
 class User {
-	new (id) {
+	construct new (id) {
 		_id = id
 	}
 	
@@ -35,14 +35,14 @@ class User {
 	}
 }
 
-var x = new Set
-x.insert(new User(1))
-x.insert(new User(2))
-x.insert(new User(1))
+var x = Set.new()
+x.insert(User.new(1))
+x.insert(User.new(2))
+x.insert(User.new(1))
 IO.print(x.count, " elements") // prints "2 elements"
 
-var set1 = new Set([1, 2, 3])
-var set2 = new Set([3, 4, 5])
+var set1 = Set.new([1, 2, 3])
+var set2 = Set.new([3, 4, 5])
 IO.print(set1, " | ", set2, " = ", (set1 | set2))
 IO.print(set1, " & ", set2, " = ", (set1 & set2))
 IO.print(set1, " + ", set2, " = ", (set1 + set2))
@@ -50,7 +50,7 @@ IO.print(set1, " - ", set2, " = ", (set1 - set2))
 IO.print(set1, " ^ ", set2, " = ", (set1 ^ set2))
 IO.print(set1, " * ", set2, " = ", (set1 * set2))
 
-var set3 = new Set([5, 4, 3])
+var set3 = Set.new([5, 4, 3])
 IO.print(set2, " == ", set3, " = ", (set2 == set3))
 IO.print(!set1)
 set1.clear()

@@ -1,6 +1,6 @@
 import "queue" for Queue
 
-var q = new Queue
+var q = Queue.new()
 q.push(42)
 q.push(33)
 q.push(12)
